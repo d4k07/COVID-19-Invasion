@@ -1,2 +1,2 @@
-# monkey47
-game COVID-19 Invasion
+# COVID-19 Invasion
+monkey_47 project
