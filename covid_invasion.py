@@ -17,12 +17,15 @@ def run_game():
     pygame.display.set_caption("COVID-19 invasion")
     # создание кота
     cat = Cat(ai_settings, screen)
-    # храним пули
-    bullets = Group()
     # Создание вируса
     covid = Covid(ai_settings, screen)
+    # храним группы пуль и группы вирусов
+    bullets = Group()
+    covids = Group()
+    # создание флота
+    gf.create_fleet(ai_settings, screen, covids)
     # тут цвет фона
-    bg_color = (230, 230, 230)
+    bg_color = (255, 255, 255)
     # основной цикл игры
     while True:
         # цикл заменить на доп функции
@@ -30,7 +33,8 @@ def run_game():
         cat.update()
         bullets.update()
         gf.update_bullets(bullets)
-        gf.update_screen(ai_settings, screen, cat, covid, bullets)
+        # gf.update_screen(ai_settings, screen, cat, covid, bullets)
+        gf.update_screen(ai_settings, screen, cat, covids, bullets)
 
 
 run_game()
